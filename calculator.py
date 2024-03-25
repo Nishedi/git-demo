@@ -14,7 +14,7 @@ def subtract(a: int|float, b: int|float) -> int|float:
     return a - b
 
 def multiply(*numbers: int|float) -> int|float:
-    mul_val = 0
+    mul_val = 1
     for n in numbers:
         mul_val *= n
 
