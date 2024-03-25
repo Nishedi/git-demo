@@ -1,0 +1,24 @@
+name: Python Code Quality Check
+
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  code-quality-check:
+    name: Run mypy and pylint
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Install dependencies
+      run: |
+        pip install mypy pylint
+    - name: Run mypy
+      run: mypy calculator.py
+
+    - name: Run pylint
+      run: pylint calculator.py
